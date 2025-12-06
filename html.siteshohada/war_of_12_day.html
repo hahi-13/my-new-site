@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>جنگ دوازده‌روزه | داستان نانوشته</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-dark: #1a1a1a;
+  --bg-overlay: rgba(0, 0, 0, 0.85);
+  --text-light: #e8e8e8;
+  --text-muted: #a0a0a0;
+  --accent-red: #8b0000;
+  --accent-gold: #d4af37;
+}
+
+body {
+  font-family: "Vazirmatn", "Tahoma", sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 2.2;
+  overflow-x: hidden;
+}
+
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23000000" width="1200" height="800"/><circle cx="200" cy="150" r="3" fill="%23ffffff" opacity="0.1"/><circle cx="600" cy="400" r="2" fill="%23ffffff" opacity="0.15"/><circle cx="900" cy="250" r="3" fill="%23ffffff" opacity="0.08"/><circle cx="1100" cy="600" r="2" fill="%23ffffff" opacity="0.12"/><circle cx="300" cy="700" r="3" fill="%23ffffff" opacity="0.1"/></svg>');
+  background-size: cover;
+  z-index: -1;
+  animation: subtleMove 30s ease-in-out infinite;
+}
+
+@keyframes subtleMove {
+  0%, 100% { transform: scale(1) translateY(0); }
+  50% { transform: scale(1.05) translateY(-10px); }
+}
+
+header {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(139, 0, 0, 0.3);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-link {
+  color: var(--accent-gold);
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+  padding: 8px 16px;
+  border: 1px solid var(--accent-gold);
+  border-radius: 5px;
+}
+
+.back-link:hover {
+  background: var(--accent-gold);
+  color: var(--bg-dark);
+  transform: translateX(5px);
+}
+
+.logo-text {
+  font-size: 1.3rem;
+  color: var(--text-light);
+  font-weight: 300;
+}
+
+.hero-section {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 30px;
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, var(--accent-red));
+  opacity: 0.5;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+  color: var(--text-light);
+  text-shadow: 2px 2px 20px rgba(139, 0, 0, 0.5);
+  animation: fadeInDown 1.5s ease;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-bottom: 15px;
+  animation: fadeInUp 2s ease;
+}
+
+.hero-divider {
+  width: 80px;
+  height: 2px;
+  background: var(--accent-red);
+  margin: 30px auto;
+  animation: expandWidth 2.5s ease;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes expandWidth {
+  from { width: 0; }
+  to { width: 80px; }
+}
+
+.content-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 40px 100px;
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.story-content {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  padding: 60px 50px;
+  border-radius: 15px;
+  border: 1px solid rgba(139, 0, 0, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.story-content::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  right: 30px;
+  font-size: 120px;
+  color: var(--accent-red);
+  opacity: 0.2;
+  font-family: Georgia, serif;
+}
+
+.story-text {
+  font-size: 1.15rem;
+  line-height: 2.4;
+  color: var(--text-light);
+  text-align: justify;
+  letter-spacing: 0.3px;
+  text-indent: 30px;
+}
+
+.story-text::first-letter {
+  font-size: 3.5rem;
+  float: right;
+  margin-left: 10px;
+  margin-top: 5px;
+  color: var(--accent-gold);
+  line-height: 1;
+  font-weight: bold;
+}
+
+.divider-line {
+  width: 50%;
+  height: 1px;
+  background: linear-gradient(to left, transparent, var(--accent-red), transparent);
+  margin: 50px auto;
+  opacity: 0.5;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(139, 0, 0, 0.3);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.memorial-quote {
+  max-width: 700px;
+  margin: 50px auto 0;
+  text-align: center;
+  padding: 30px;
+  font-size: 1.1rem;
+  color: var(--accent-gold);
+  font-style: italic;
+  opacity: 0.8;
+}
+
+
+.video-section {
+  text-align: center;
+  margin: 80px auto 50px;
+}
+
+.video-title {
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--accent-gold);
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 10px rgba(212, 175, 55, 0.4);
+}
+
+.video-container {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(139, 0, 0, 0.4);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  background: #000;
+}
+
+.video-container video {
+  width: 100%;
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .content-section {
+    padding: 40px 20px 60px;
+  }
+  
+  .story-content {
+    padding: 40px 25px;
+  }
+  
+  .story-text {
+    font-size: 1rem;
+    line-height: 2.2;
+  }
+  
+  .header-content {
+    padding: 0 20px;
+  }
+  
+  .back-link {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+  
+  .logo-text {
+    font-size: 1.1rem;
+  }
+
+  .video-title {
+    font-size: 1.8rem;
+  }
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+::selection {
+  background: var(--accent-red);
+  color: white;
+}
+  </style>
+</head>
+<body>
+  <div class="background-overlay"></div>
+  
+  <header>
+    <div class="header-content">
+      <a href="index.html" class="back-link">
+        <span>←</span>
+        <span>بازگشت به صفحه اصلی</span>
+      </a>
+      <div class="logo-text">یادواره شهدا</div>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <h1 class="hero-title">جنگ دوازده‌روزه</h1>
+    <p class="hero-subtitle">داستان نانوشته‌ای که باید گفته شود</p>
+    <div class="hero-divider"></div>
+  </section>
+
+  <section class="content-section">
+    <div class="story-content">
+      <div class="story-text">
+        جنگ دوازده‌روزه فقط دوازده روز نبود… انگار یک عمر گذشت. انگار زمان کش آمد و هر ثانیه‌اش تبدیل شد به زخمی که هنوز بعد از سال‌ها می‌سوزد. هیچ‌کس فکر نمی‌کرد یک صبح معمولی، این‌طور به غروب‌هایی برسد که رنگ آسمان با دود و آتش یکی شده باشد. صدای انفجارها، نفس‌ها را در سینه حبس می‌کرد و مردم، با دستان لرزان، دنبال پناهی می‌گشتند که معلوم نبود امن است یا نه. مادرهایی بودند که فرزندانشان را در آغوش می‌گرفتند و زیر لب فقط یک جمله را تکرار می‌کردند: «خدایا… فقط یک بار دیگر نفس بکشد.» پدرهایی بودند که با چشم‌های قرمز و خسته، سعی می‌کردند قوی بمانند، اما لرزش شانه‌هایشان از حجم درد و ترس، همه چیز را لو می‌داد. کودکان، آن معصوم‌ترین تصویرهای دنیا، در این دوازده روز پیر شدند؛ نگاهشان دیگر نگاه کودکی نبود. در یک لحظه، صدای بازی و خنده‌شان جای خودش را به سکوت سنگینی داد که هیچ چیز نمی‌توانست آن را بشکند.
+      </div>
+      
+      <div class="divider-line"></div>
+      
+      <div class="story-text">
+        خانه‌هایی که سال‌ها با عشق ساخته شده بود، در چند ثانیه فرو ریختند. تمام خاطرات، تمام عکس‌ها، لباس‌ها، دست‌نوشته‌ها، همه زیر آوار ماند. مردمی که زمانی باور داشتند خانه یعنی امنیت، فهمیدند گاهی خانه فقط یک نقطه روی نقشه است که می‌تواند یک شب ناپدید شود. کوچه‌ها، دیگر کوچه نبودند؛ تبدیل به مسیرهایی شده بودند که هرکس از آن عبور می‌کرد، ردّی از ناباوری در چهره‌اش دیده می‌شد. اجساد عزیزان، زخمی‌ها، فریادهایی که در هم می‌پیچید… هیچ‌کس این تصاویر را فراموش نمی‌کند.
+      </div>
+      
+      <div class="divider-line"></div>
+      
+      <div class="story-text">
+        در این دوازده روز، دنیا برای مردم منطقه یک‌باره کوچک شد؛ کوچک‌تر از یک اتاق تاریک، کوچک‌تر از یک پناهگاه خفه، کوچک‌تر از قلبی که زیر فشار درد می‌لرزید. هر صدای کوچک، مثل رعدی در گوش می‌پیچید و هیچ‌کس نمی‌دانست آیا روز بعدی وجود دارد یا نه. مردم از یک‌سو می‌جنگیدند تا زنده بمانند و از سوی دیگر تلاش می‌کردند امید را در دل‌هایشان زنده نگه دارند؛ امیدی که هر بار با آوار یک ساختمان دیگر فرو می‌ریخت.
+      </div>
+      
+      <div class="divider-line"></div>
+      
+      <div class="story-text">
+        بچه‌هایی بودند که در این دوازده روز معنی مرگ را فهمیدند، معنی ترس را، معنی از دست دادن را… و این، تلخ‌ترین وجه جنگ است. جنگ نه‌فقط جان می‌گیرد، بلکه کودکی را می‌دزدد، آرامش را می‌رباید، آینده را می‌سوزاند. مادری که فرزندش را از دست داد، هیچ‌وقت دیگر همان آدم قبل نشد. پدری که عزیزش را به خاک سپرد، دیگر امید را مثل گذشته نمی‌دید. مردم، در میان دود و خاک، دنبال تکه‌ای از زندگی می‌گشتند که شاید هنوز باقی مانده باشد.
+      </div>
+      
+      <div class="divider-line"></div>
+      
+      <div class="story-text">
+        وقتی آتش‌بس آمد، هیچ‌کس جشن نگرفت. چطور ممکن بود؟ آتش ممکن است خاموش شود، اما دل‌ها… دل‌ها سال‌ها بعد هم هنوز در همان دوازده روز گیر کرده‌اند. هنوز شب‌ها با کوچک‌ترین صدا از خواب می‌پرند. هنوز چشم‌ها دنبال کسانی می‌گردد که دیگر برنمی‌گردند. هنوز بچه‌ها از آسمان می‌ترسند و نمی‌دانند چرا باید از چیزی که همیشه زیبا بوده، وحشت داشته باشند.
+      </div>
+      
+      <div class="divider-line"></div>
+      
+      <div class="story-text">
+        این دوازده روز، فقط روز نبود؛ یک زخم بود. زخمی که هنوز روی قلب مردم مانده. زخمی که هر بار یادش زنده می‌شود، آسمان سنگین‌تر می‌شود. و شاید تنها کاری که از دست دنیا برمی‌آید، این است که اجازه ندهد این روزها فراموش شوند. اجازه ندهد درد مردم تبدیل به یک تاریخ خشک شود. جنگ دوازده‌روزه، داستان انسان‌هایی است که فقط می‌خواستند زنده بمانند… اما جهان دیر فهمید چه بر سرشان آمده.
+      </div>
+    </div>
+    
+    <div class="memorial-quote">
+      «یادشان گرامی، راهشان پر رهرو»
+    </div>
+
+    <section class="video-section">
+  <h2 class="video-title">روایتی از آن دوازده روز</h2>
+  <div class="video-container">
+    <video controls>
+<source src="img/c9b027363208b7e6e2447aa03ad06d3d65959571-720p.mp4" type="video/mp4">
+      مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+    </video>
+  </div>
+</section>
+
+  
+
+  </section>
+
+  <footer>
+    <p>© یادواره شهدا - همه حقوق محفوظ است</p>
+  </footer>
+</body>
+</html>
